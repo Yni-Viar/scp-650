@@ -21,7 +21,8 @@ func _physics_process(delta):
 		if timer >= wait_seconds:
 			#Action. We move SCP-650 to player's global position - offset (which is transform.basis.z) * how far SCP-650 will be from player
 			global_position = get_tree().root.get_node("Game/Player").global_position - get_tree().root.get_node("Game/Player").global_transform.basis.z * 2
-			set_state("Pose " + str(rng.randi_range(4, 10)))
+			# Uncomment if you want to change pose when teleporting
+			#set_state("Pose " + str(rng.randi_range(4, 10)))
 			# Look at player
 			look_at(get_tree().root.get_node("Game/Player").global_position)
 			# reset timer
